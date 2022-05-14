@@ -23,7 +23,6 @@ require 'json'
 
 # Pregunta 1
 def request(url_request) # metodo request que recibe una URL
-  #puts url_request
   url = URI(url_request)
   https = Net::HTTP.new(url.host, url.port)
   https.use_ssl = true
@@ -82,15 +81,12 @@ end
 # llamada a metodo request con url api nasa y key propio retornado de registro en pag nasa, metodo request retorna un hash 1 llave con arreglo de hash de 856 
 api_key=ARGV[0] #rescata parametro de api_key ingresado por usuario
 data = request("https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000&api_key="+"#{api_key}") #llama al metodo request y asigna resultado a varible data
-#print "#{data} \n"
-# puts data.class
 
 # Llamada a metodo buid_web_page que crea archivo output.html con la estructura e imagenes
 data1=buid_web_page(data)
 
 # Llamada a metodo photos_count con hash resultante de metodo request
 data2 = photos_count(data)
-#print "#{data2} \n" 
 
 
 
