@@ -55,7 +55,7 @@ def buid_web_page(hash_web)
       <section class="container text-center">
         <h1>Fotos API Nasa</h1>
         <ul>
-          #{photos_html[0..9].map{|e|"\t\t\t\t""<li><img class=""img-fluid"" src=\"#{e}\"></li>\n"}.join}
+        #{photos_html[0..9].map{|e|"\t\t""<li><img class=""img-fluid"" src=\"#{e}\"></li>\n"}.join}
         </ul>
       </section>
     </body>
